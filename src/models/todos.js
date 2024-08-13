@@ -6,6 +6,7 @@ const saveTodos = (todos) => {
   fs.writeFileSync(todosFile, JSON.stringify(todos, undefined, 2));
 };
 
+// Gets all todos
 exports.getTodos = () => {
   try {
     const data = fs.readFileSync(todosFile);
@@ -17,6 +18,7 @@ exports.getTodos = () => {
   }
 };
 
+// Adds a todo item
 exports.addTodo = (todo) => {
   const now = new Date();
   const newTodo = {
